@@ -1,0 +1,80 @@
+// Install & Configuring MySql on Arch
+___________________________________________
+
+- { Step 1: Update System
+# sudo pacman -Syu
+}
+_____________________________
+
+- { Step 2: Install MySql
+# sudo pacman -S mysql
+}
+______________________________
+
+- { Step 3: Verify Installation
+# mysql --version
+}
+______________________________
+
+- { Step 4: Initialize MySql
+# sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+}
+______________________________
+
+- { Step 5: Start MySql { using systemctl }
+# sudo systemctl start mysqld
+# sudo systemctl status mysqld
+}
+_____________________________
+
+- { Step 6: Enable MySql
+# sudo systemctl enable mysqld
+}
+_____________________________
+
+
+// Configuring MySql
+
+
+- { Step 1: Scure Installation
+# sudo mysql_scure_installation
+}
+_____________________________
+
+- { Step 2: Log Into MySql
+# sudo mysql
+}
+_____________________________
+
+- { Step 3: Create user
+# CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+}
+_____________________________
+
+- { Step 4: Grant Privilage
+# GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
+}
+____________________________
+
+- { Step 5: Flush PRIVILEGES
+# FLUSH PRIVILEGES;
+# exit
+}
+______________________________
+
+- { Step 6: Log in with new user
+# mysql -u <username> -p
+}
+_____________________________
+
+- { Step 7: Create Database
+# CREATE DATABASE <dbnameyourdomain>
+}
+_____________________________
+
+- { Step 8: Verify Database
+# SHOW DATABASE;
+}
+______________________________
+
+Huh" congrats! you have succesfully installed & configured MySql on your Arch
